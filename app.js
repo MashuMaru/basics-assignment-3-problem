@@ -11,10 +11,10 @@ const app = Vue.createApp({
     },
     computed: {
         result() {
-            if(this.number > 37) {
+            if(this.number < 37) {
+                return 'Not there yet...';
+            } else if (this.number > 37) {
                 return 'Woah, too high!';
-            } else if (this.number < 37) {
-                return 'Still too low...';
             } else {
                 return this.number;
             }
@@ -23,10 +23,28 @@ const app = Vue.createApp({
     watch: {
         result() {
             const that = this;
-            setTimeout(function() {
+            setTimeout(function(){
                 that.number = 0;
-            }, 5000)
+                console.log('reset');
+            }, 1000);
         }
     }
 })
+
 app.mount('#assignment');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
